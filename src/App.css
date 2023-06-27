@@ -42,6 +42,8 @@
   border: #6263644f 1px solid;
   padding: 30px 15px;
   border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
 }
 .form{
   width: 1320px;
