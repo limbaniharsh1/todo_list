@@ -1,6 +1,6 @@
 import { Add_todo, Auth_email } from "./ActionType";
 
-const initialstate = { data: [],email:"" };
+const initialstate = { data: [],email:'' };
 
 export const Reducer = (state = initialstate, action) => {
   switch (action.type) {

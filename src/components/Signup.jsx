@@ -10,7 +10,7 @@ function Signup() {
       googleauth().then((userdetails)=>dispatch(Authemail(userdetails._tokenResponse.email)))
     }
   return <div>
-    <button onClick={handlesignup}>sign up google</button>
+    <button onClick={handlesignup} className="signup">sign up google</button>
   </div>;
 }
 

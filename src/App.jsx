@@ -8,7 +8,7 @@ function App() {
   console.log(selectemail)
   return (
     <div>
-      {selectemail === "" ? <Signup/> : <Main/>}
+      {selectemail === '' ? <Signup/> : <Main/>}
     </div>
   )
 }

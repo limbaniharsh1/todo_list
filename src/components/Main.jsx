@@ -5,9 +5,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Adddb, Authemail } from "../redux/Action";
 import Task from "../components/Task";
-import { googleauth } from "../Config";
+import { googleauth, signout } from "../Config";
 import Signup from "../components/Signup";
 import { Auth_email } from "../redux/ActionType";
+import { getAuth } from "firebase/auth";
 
 function Main() {
   let [task, setTask] = useState("");
@@ -79,17 +80,18 @@ function Main() {
     // console.log(i.date)
     <Task />;
   });
+ getAuth()
+  const handlesignout =()=>{
+    signout().then(()=>dispatch(Authemail('')))
+  }
 
   useEffect(() => {
     getdata();
   }, []);
 
-  const formdata =()=>{
-    
-  }
-
   return (
     <div className="App">
+        <button className="signout" onClick={handlesignout}>sign out</button>
       <form onSubmit={handleform} className="form">
         enter your task :{" "}
         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />

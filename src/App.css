@@ -82,3 +82,19 @@
   border-radius: 15px;
   cursor: pointer;
 }
+.signout{
+  padding: 12px 45px;
+  background-color: #282c34;
+  color: #61dafb;
+  border-radius: 10px;
+  margin: 12px 0px;
+  cursor: pointer;
+}
+.signup{
+  padding: 12px 41px;
+  background-color: #282c34;
+  color: #61dafb;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+}
