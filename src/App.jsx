@@ -6,9 +6,12 @@ import { useSelector } from 'react-redux'
 function App() {
   let selectemail = useSelector((store)=>store.email)
   console.log(selectemail)
+  let rec =localStorage.getItem('record')
+  console.log(rec+'rec')
+  // localStorage.setItem('record',rec)
   return (
     <div>
-      {selectemail === '' ? <Signup/> : <Main/>}
+      {rec === ''|| selectemail==='' ? <Signup/> : <Main/>}
     </div>
   )
 }

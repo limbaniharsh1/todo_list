@@ -83,6 +83,7 @@ function Main() {
  getAuth()
   const handlesignout =()=>{
     signout().then(()=>dispatch(Authemail('')))
+    localStorage.setItem('record','')
   }
 
   useEffect(() => {
