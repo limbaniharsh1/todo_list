@@ -1,14 +1,46 @@
 {
   "posts": [
     {
-      "task": "javascript",
-      "date": "2023-06-07",
-      "id": 3
+      "id": 1,
+      "email": "limbaniharsh1@gmail.com",
+      "todos": [
+        {
+          "task": "html",
+          "date": ""
+        },
+        {
+          "task": "css",
+          "date": ""
+        },
+        {
+          "task": "javascript",
+          "date": ""
+        }
+      ]
     },
     {
-      "task": "html,css",
-      "date": "2023-06-16",
-      "id": 4
+      "id": 2,
+      "email": "user2@gmail.com",
+      "todos": [
+        {
+          "task": "html",
+          "date": "07-08-2023"
+        },
+        {
+          "task": "css",
+          "date": "07-08-2023"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "email": "user333@gmail.com",
+      "todos": [
+        {
+          "task": "html",
+          "date": "07-08-2023"
+        }
+      ]
     }
   ]
 }

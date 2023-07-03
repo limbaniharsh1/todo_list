@@ -1,6 +1,6 @@
-import { Add_todo, Auth_email } from "./ActionType";
+import { Add_todo, Auth_email, Todo_Data } from "./ActionType";
 
-const initialstate = { data: [] };
+const initialstate = { data: [{}] };
 
 export const Reducer = (state = initialstate, action) => {
   switch (action.type) {
@@ -9,6 +9,9 @@ export const Reducer = (state = initialstate, action) => {
 
     case Auth_email:
       return { ...state, email: action.email};
+
+    case Todo_Data:
+      return{...state,todos:action.todo}
 
     default:
       return state;

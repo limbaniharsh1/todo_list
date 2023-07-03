@@ -9,9 +9,9 @@ function Task(props) {
   var dispatch = useDispatch();
 
   const getdata = () => {
-    axios
-      .get("http://localhost:3003/posts")
-      .then((res) => dispatch(Adddb(res.data)));
+    // axios
+    //   .get("http://localhost:3003/posts")
+    //   .then((res) => dispatch(Adddb(res.data)));
   };
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function Task(props) {
   const task=props.task
   const handlecolor={
     // color:task.length<=5?'red':'blue'
-    color:task.length>=10?(task.length>=10 && task.length<=24 ? 'blue':'green'):'red',
+    // color:task.length>=10?(task.length>=10 && task.length<=24 ? 'blue':'green'):'red',
   }
 
   return (
