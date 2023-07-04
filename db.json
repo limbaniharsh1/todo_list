@@ -5,15 +5,42 @@
       "email": "limbaniharsh1@gmail.com",
       "todos": [
         {
+          "id": 1,
           "task": "html",
           "date": ""
         },
         {
+          "id": 2,
           "task": "css",
           "date": ""
         },
         {
+          "id": 3,
           "task": "javascript",
+          "date": ""
+        },
+        {
+          "task": "java",
+          "date": ""
+        },
+        {
+          "task": "react",
+          "date": ""
+        },
+        {
+          "task": "node",
+          "date": ""
+        },
+        {
+          "task": "css3",
+          "date": ""
+        },
+        {
+          "task": "html5",
+          "date": ""
+        },
+        {
+          "task": "media",
           "date": ""
         }
       ]

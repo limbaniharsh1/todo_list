@@ -18,15 +18,6 @@ function Task(props) {
     getdata();
   }, []);
 
-  const handledel = (id) => {
-    // axios.delete(`http://localhost/3003/posts/${id}`)
-    // .then(()=>getdata())
-    // console.log(id)
-    // getdata();
-    console.log(id);
-    axios.delete(`http://localhost:3003/posts/${id}`);
-    getdata();
-  };
 
   const task=props.task
   const handlecolor={
@@ -47,9 +38,9 @@ function Task(props) {
           Update
         </button>
         <button
-          id={props.id}
+          id={props.todokey}
           type="submit"
-          onClick={(e) => handledel(e.target.id)}
+          onClick={(e) => props.handledel(e.target.id)}
         >
           Delete
         </button>

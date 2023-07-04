@@ -12,8 +12,7 @@ function Signup() {
   // }
   // data.push(obj)
   var rec = JSON.stringify(data)
-  
-  let fetch = useSelector((store)=>store.email)
+
   let dispatch = useDispatch()
   const handlesignup =()=>{
     // googleauth().then((userdetails)=>dispatch(Authemail(userdetails._tokenResponse.email)))
@@ -21,10 +20,6 @@ function Signup() {
       dispatch(Authemail(userdetails._tokenResponse.email))
       localStorage.setItem('record',JSON.stringify(userdetails.user.email))
     })
-    // let user = 
-    // localStorage.setItem()
-    // .then((userdetails)=>setEmail(userdetails))
-    // console.log(fetch+'fetch')
   }
   console.log(email+'my')
   return <div>
