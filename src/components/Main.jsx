@@ -45,12 +45,11 @@ function Main() {
   if (testemail) {
     alert("account not exist");
   }
-  const handleupdate = (e, t, d) => {
-    console.log(e, t, d);
+  const handleupdate = (e, t, d,i) => {
+    console.log(e,t,d,i)
     setDate(d);
     setTask(t);
-    setMyid(e);
-    console.log(user);
+    setMyid(i);
   };
 
   const submit = () => {
@@ -61,11 +60,14 @@ function Main() {
 
   // console.log(user.todos.id)
   const edit = () => {
-    // axios.patch(`http://localhost:3003/posts/${myid}`,{
-    //     task:task,
-    //     date:date
-    //   })
-    console.log("editing")
+    console.log(task)
+    
+    console.log('====================================');
+    console.log(user.todos[myid].task=task);
+    axios.patch(`http://localhost:3003/posts/${user.id}`,user)
+    .then((res)=>console.log(res.data))
+    user.todos.map((e,i)=>{
+    })
   };
 
   const handledel = (id) => {
@@ -80,10 +82,10 @@ function Main() {
 
     getdata();
   };
-
+ 
   const handleform = (e) => {
     e.preventDefault();
-    if (myid === "" || myid === null ||myid === undefined) {
+    if (myid === undefined) {
       submit();
     } else {
       edit();

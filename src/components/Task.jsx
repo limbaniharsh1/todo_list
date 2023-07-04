@@ -33,8 +33,9 @@ function Task(props) {
         <button
           type="submit"
           id={props.id}
-          onClick={(e) => props.update(e.target.id,props.task,props.date)}
+          onClick={(e) => props.update(e.target.id,props.task,props.date,props.todokey)}
         >
+          {}
           Update
         </button>
         <button

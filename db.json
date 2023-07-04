@@ -5,17 +5,14 @@
       "email": "limbaniharsh1@gmail.com",
       "todos": [
         {
-          "id": 1,
           "task": "html",
           "date": ""
         },
         {
-          "id": 2,
-          "task": "css",
+          "task": "mongodb",
           "date": ""
         },
         {
-          "id": 3,
           "task": "javascript",
           "date": ""
         },
@@ -24,11 +21,11 @@
           "date": ""
         },
         {
-          "task": "react",
+          "task": "react.js",
           "date": ""
         },
         {
-          "task": "node",
+          "task": "node.js",
           "date": ""
         },
         {
@@ -40,7 +37,19 @@
           "date": ""
         },
         {
-          "task": "media",
+          "task": "css",
+          "date": ""
+        },
+        {
+          "task": "css",
+          "date": ""
+        },
+        {
+          "task": "css33",
+          "date": ""
+        },
+        {
+          "task": "sfgsdgfdgfsd",
           "date": ""
         }
       ]
