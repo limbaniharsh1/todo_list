@@ -27,6 +27,31 @@ function Main() {
   let localemail = JSON.parse(localStorage.getItem("record"));
   let testemail = false;
   // console.log("email : "+fetchemail)
+  
+  let handlemail = () => {
+    
+    let only = true;
+    axios.get(`http://localhost:3003/posts`).then((res) => {
+      res.data.filter((e, i) => {
+        if (e.email !== localemail) {
+          only = true;
+        } else {
+          only = false;
+        }
+      });
+      if (only) {
+        console.log("posts new email");
+      } else {
+        console.log("old email");
+      }
+  
+    });
+  };
+  
+  
+  const check=()=>{
+    
+  }
 
   let dispatch = useDispatch();
   const getdata = () => {
@@ -66,8 +91,6 @@ function Main() {
     console.log(user.todos[myid].task=task);
     axios.patch(`http://localhost:3003/posts/${user.id}`,user)
     .then((res)=>console.log(res.data))
-    user.todos.map((e,i)=>{
-    })
   };
 
   const handledel = (id) => {
@@ -107,6 +130,7 @@ function Main() {
 
   useEffect(() => {
     getdata();
+    handlemail()
   }, []);
 
   return (
