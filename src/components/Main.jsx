@@ -18,15 +18,10 @@ function Main() {
   let [user, setUser] = useState("");
   let [filtered, setFiltered] = useState();
   let [todos, setTodos] = useState();
-  let [newdate, setNewdate] = useState("");
-  // console.log(myid)
 
   let fetchdata = useSelector((store) => store.data);
   let fetchemail = useSelector((store) => store.email);
-  // let myfilter = fetchdata.filter((e) => e.email === fetchemail);
   let localemail = JSON.parse(localStorage.getItem("record"));
-  let testemail = false;
-  // console.log("email : "+fetchemail)
 
   let filtereddata = (res) =>{
     var val = res.filter((e,i)=>e.email === localemail)
@@ -47,11 +42,6 @@ function Main() {
     })
   };
   
-  
-  const check=()=>{
-    
-  }
-
   let dispatch = useDispatch();
   const getdata = () => {
     axios.get("http://localhost:3003/posts").then((res) => {
@@ -60,17 +50,11 @@ function Main() {
           setUser(ele);
           setTodos(ele.todos);
           dispatch(Adddb(ele.todos));
-        } else {
-          testemail = true;
         }
       });
     });
   };
-  if (testemail) {
-    alert("account not exist");
-  }
   const handleupdate = (e, t, d,i) => {
-    console.log(e,t,d,i)
     setDate(d);
     setTask(t);
     setMyid(i);
@@ -82,9 +66,7 @@ function Main() {
     getdata();
   };
 
-  // console.log(user.todos.id)
   const edit = () => {
-    console.log(task)
     console.log('====================================');
     user.todos[myid].task=task
     user.todos[myid].date=date
@@ -97,26 +79,22 @@ function Main() {
       if (i == id) {
         todos.splice(i, 1);
         axios.patch(`http://localhost:3003/posts/${user.id}`, user);
-        console.log(i)
         getdata()
       }
     });
 
     getdata();
   };
- console.log(myid)
   const handleform = (e) => {
     e.preventDefault();
     if (myid === undefined || myid === '') {
       submit();
     } else {
       edit();
-      // submit();
     }
     setDate("");
     setTask("");
     setMyid("");
-    // getdata();
   };
 
   const data = useSelector((store) => store.data);

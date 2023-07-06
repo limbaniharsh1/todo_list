@@ -10,7 +10,7 @@ function App() {
   // localStorage.setItem('record',rec)
   return (
     <div>
-      {rec === ''|| selectemail==='' ? <Signup/> : <Main/>}
+      {rec === ''|| selectemail==='' || !rec ? <Signup/> : <Main/>}
     </div>
   )
 }

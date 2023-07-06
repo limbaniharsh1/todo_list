@@ -5,20 +5,7 @@ import { useDispatch } from "react-redux";
 import { Adddb } from "../redux/Action";
 
 function Task(props) {
-  //   console.log(props.date);
   var dispatch = useDispatch();
-
-  const getdata = () => {
-    // axios
-    //   .get("http://localhost:3003/posts")
-    //   .then((res) => dispatch(Adddb(res.data)));
-  };
-
-  useEffect(() => {
-    getdata();
-  }, []);
-
-
   const task=props.task
   const handlecolor={
     // color:task.length<=5?'red':'blue'
