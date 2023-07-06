@@ -27,25 +27,24 @@ function Main() {
   let localemail = JSON.parse(localStorage.getItem("record"));
   let testemail = false;
   // console.log("email : "+fetchemail)
+
+  let filtereddata = (res) =>{
+    var val = res.filter((e,i)=>e.email === localemail)
+    if(val.length>0){
+      console.log("old email")
+    }
+    else{
+      axios.post(`http://localhost:3003/posts`,{
+        email:localemail,
+        todos:[]
+      })
+    }
+  }
   
   let handlemail = () => {
-    
-    let only = true;
-    axios.get(`http://localhost:3003/posts`).then((res) => {
-      res.data.filter((e, i) => {
-        if (e.email !== localemail) {
-          only = true;
-        } else {
-          only = false;
-        }
-      });
-      if (only) {
-        console.log("posts new email");
-      } else {
-        console.log("old email");
-      }
-  
-    });
+    axios.get(`http://localhost:3003/posts`).then((res)=>{
+      filtereddata(res.data)
+    })
   };
   
   
@@ -86,11 +85,11 @@ function Main() {
   // console.log(user.todos.id)
   const edit = () => {
     console.log(task)
-    
     console.log('====================================');
-    console.log(user.todos[myid].task=task);
+    user.todos[myid].task=task
+    user.todos[myid].date=date
     axios.patch(`http://localhost:3003/posts/${user.id}`,user)
-    .then((res)=>console.log(res.data))
+    .then(getdata())
   };
 
   const handledel = (id) => {
@@ -105,10 +104,10 @@ function Main() {
 
     getdata();
   };
- 
+ console.log(myid)
   const handleform = (e) => {
     e.preventDefault();
-    if (myid === undefined) {
+    if (myid === undefined || myid === '') {
       submit();
     } else {
       edit();
