@@ -103,6 +103,21 @@
         {
           "task": "wordpress design",
           "date": "2023-07-14"
+        },
+        {
+          "task": "photoshop",
+          "date": "2023-07-01",
+          "duedate": "2023-07-31"
+        },
+        {
+          "task": "figma",
+          "date": "2023-07-07",
+          "duedate": "07-07-2023"
+        },
+        {
+          "task": "allustrator",
+          "date": "2023-07-06",
+          "duedate": "date not set"
         }
       ]
     },

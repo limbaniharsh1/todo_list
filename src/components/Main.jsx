@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import { Adddata, Adddb, Authemail } from "../redux/Action";
 import Task from "../components/Task";
 import { googleauth, signout } from "../Config";
-import Signup from "../components/Signup";
 import { Auth_email } from "../redux/ActionType";
 import { getAuth } from "firebase/auth";
 
 function Main() {
   let [task, setTask] = useState("");
   let [date, setDate] = useState("");
+  let [duedate, setDuedate] = useState("date not set");
   let [myid, setMyid] = useState();
   let [email, setEmail] = useState("");
   let [user, setUser] = useState("");
@@ -61,7 +61,7 @@ function Main() {
   };
 
   const submit = () => {
-    todos.push({ task: task, date: date });
+    todos.push({ task: task, date: date, duedate:duedate});
     axios.patch(`http://localhost:3003/posts/${user.id}`, user);
     getdata();
   };
@@ -127,6 +127,12 @@ function Main() {
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+        />
+        due date :{" "}
+        <input
+          type="date"
+          value={duedate}
+          onChange={(e) => setDuedate(e.target.value)}
         />
         <input type="submit" value="submit" />
       </form>
