@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Adddata, Adddb, Authemail } from "../redux/Action";
 import Task from "../components/Task";
 import { googleauth, signout } from "../Config";
-import { Auth_email } from "../redux/ActionType";
 import { getAuth } from "firebase/auth";
 
 function Main() {
@@ -44,7 +43,7 @@ function Main() {
   
   let dispatch = useDispatch();
   const getdata = () => {
-    axios.get("http://localhost:3003/posts").then((res) => {
+    axios.get(`http://localhost:3003/posts`).then((res) => {
       res.data.filter((ele) => {
         if (ele.email === localemail) {
           setUser(ele);
